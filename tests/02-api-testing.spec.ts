@@ -1,7 +1,9 @@
 import { test, expect, request } from '@playwright/test';
 import tags from '../test-data/tags.json';
+import { authenticate } from '../.auth/authHelper';
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page, request }) => {
+   await authenticate(request);
   await page.route('*/**/api/tags', async route => {
     route.fulfill({
       status: 200,
@@ -31,7 +33,6 @@ test('Intercepting API requests', async ({ page }) => {
       body: JSON.stringify(originalResponseBody) // Sending the modified response body
     });
   });
-
  
   await page.getByText('Global Feed').click();   // Clicking on the "Global Feed" link on the page
   await expect(page.locator('.navbar-brand')).toHaveText('conduit');   // Validating that the navbar brand text matches 'conduit'
