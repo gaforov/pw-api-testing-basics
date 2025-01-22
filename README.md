@@ -1,6 +1,6 @@
 # API Testing with Playwright: A Beginner's Guide
 
-This repository provides foundational examples and exercises for API testing using Playwright. It is structured to help users understand and implement basic API testing concepts effectively.
+___This repository provides foundational examples and exercises for API testing using Playwright. It is structured to help users understand and implement basic API testing concepts effectively.___
 
 ## Repository Structure
 
