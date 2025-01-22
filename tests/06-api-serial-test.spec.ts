@@ -3,7 +3,7 @@ import { authenticate } from '../.auth/authHelper';
 
 let articleSlug: string;
 
-test.describe.serial('Article Management', () => {
+test.describe.serial('Create & Delete an Article using Serial', () => {
     test('create an article', async ({ request }) => {
         const userToken = await authenticate(request);
 
